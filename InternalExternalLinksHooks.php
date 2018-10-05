@@ -5,7 +5,7 @@ class InternalExternalLinksHooks {
 		#https://oldschool.runescape.wiki/ is 33 chars
 		
 		if(substr($url, 0, 23) == "https://runescape.wiki/" or 
-			substr($url, 0, 33) == "https://oldschool.runescape.wiki") {
+			substr($url, 0, 33) == "https://oldschool.runescape.wiki/") {
 				$attribs["class"] = str_replace("external", "", $attribs["class"]);
 		}
 		
