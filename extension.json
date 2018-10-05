@@ -1,0 +1,27 @@
+{
+    "name": "InternalExternalLinks",
+    "version": "1",
+    "author": [
+        "[https://runescape.wiki/w/User:TyA TyA <tyler@faceyspacies.com>]"
+    ],
+    "url": "",
+    "namemsg": "internalExternalLinks",
+    "descriptionmsg": "internalExternalLinks-desc",
+    "license-name": "MIT",
+    "type": "other",
+    "manifest_version": 1,
+    "MessagesDirs": {
+        "InternalExternalLinks": [
+            "i18n"
+        ]
+    },
+    "AutoloadClasses": {
+		"InternalExternalLinksHooks": "InternalExternalLinksHooks.php"
+
+    },
+	"Hooks": {
+		"LinkerMakeExternalLink": [
+			"InternalExternalLinksHooks::onLinkerMakeExternalLink"
+		] 
+	}
+}

@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "TyA <tyler@faceyspacies.com>"
+        ]
+    },
+    "internalExternalLinks": "InternalExternalLinks",
+    "internalExternalLinks-desc": "Removes class=\"external\" from external links that point to the same site."
+}
