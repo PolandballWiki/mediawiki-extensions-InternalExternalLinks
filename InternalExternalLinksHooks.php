@@ -9,9 +9,17 @@ class InternalExternalLinksHooks {
 		}
 
 		foreach($wgIELSites as $site) {
-			// See if the URL has one of our $site's at the start
-			if(substr($url, 0, strlen($site)) == $site) {
+			
+			$urlparts = parse_url($url);
+			
+			if($urlparts == false) {
+				// seriously malformed url we can't do anything with
+				return true;
+			}
+			
+			if($urlparts["host"] == $site) {
 				$attribs["class"] = str_replace("external", "", $attribs["class"]);
+				return true;
 			}
 		}
 		

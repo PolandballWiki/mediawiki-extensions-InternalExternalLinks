@@ -8,3 +8,12 @@ This extension removes the external class from https://runescape.wiki/ and https
 Then add 
 ```wfLoadExtension("InternalExternalLinks");```
 to your LocalSettings.php 
+
+## Configuration
+
+```
+$wgIELSites = array(
+   "runescape.wiki",
+   "oldschool.runescape.wiki"
+);
+```
