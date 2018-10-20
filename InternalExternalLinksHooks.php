@@ -4,21 +4,21 @@ class InternalExternalLinksHooks {
 		global $wgIELSites;
 		
 		// if no sites are added, do nothing
-		if($wgIELSites == null) {
+		if( $wgIELSites == null ) {
+			return true;
+		}
+		
+		$urlparts = parse_url( url );
+			
+		if( $urlparts == false ) {
+			// seriously malformed url we can't do anything with
 			return true;
 		}
 
-		foreach($wgIELSites as $site) {
-			
-			$urlparts = parse_url($url);
-			
-			if($urlparts == false) {
-				// seriously malformed url we can't do anything with
-				return true;
-			}
-			
-			if($urlparts["host"] == $site) {
-				$attribs["class"] = str_replace("external", "", $attribs["class"]);
+		foreach( $wgIELSites as $site ) {
+
+			if( $urlparts["host"] == $site ) {
+				$attribs["class"] = str_replace( "external", "", $attribs["class"] );
 				return true;
 			}
 		}
