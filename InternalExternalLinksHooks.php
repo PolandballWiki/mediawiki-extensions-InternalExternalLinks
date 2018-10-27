@@ -8,7 +8,7 @@ class InternalExternalLinksHooks {
 			return true;
 		}
 		
-		$urlparts = parse_url( url );
+		$urlparts = parse_url( $url );
 			
 		if( $urlparts == false ) {
 			// seriously malformed url we can't do anything with
