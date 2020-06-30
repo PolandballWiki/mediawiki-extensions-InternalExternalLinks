@@ -10,13 +10,12 @@ class InternalExternalLinksHooks {
 		
 		$urlparts = parse_url( $url );
 			
-		if( $urlparts == false ) {
+		if( $urlparts == false || !isset($urlparts['host']) ) {
 			// seriously malformed url we can't do anything with
 			return true;
 		}
 
 		foreach( $wgIELSites as $site ) {
-
 			if( $urlparts["host"] == $site ) {
 				$attribs["class"] = str_replace( "external", "", $attribs["class"] );
 				return true;
