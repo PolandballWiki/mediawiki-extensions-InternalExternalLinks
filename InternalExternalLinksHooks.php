@@ -16,8 +16,11 @@ class InternalExternalLinksHooks {
 		}
 
 		foreach( $wgIELSites as $site ) {
-			if( $urlparts["host"] == $site ) {
-				$attribs["class"] = str_replace( "external", "", $attribs["class"] );
+			if( $urlparts['host'] == $site ) {
+				$attribs['class'] = str_replace( 'external', '', $attribs['class'] );
+				// Added by "$wgNoFollowLinks = true;" and "$wgExternalLinkTarget = '_blank';".
+				unset($attribs['rel']);
+				unset($attribs['target']);
 				return true;
 			}
 		}
