@@ -1,0 +1,9 @@
+{
+    "@metadata": {
+        "authors": [
+            "Bilin Tsui"
+        ]
+    },
+    "internalExternalLinks": "InternalExternalLinks",
+    "internalExternalLinks-desc": "從指向相同網站的外部連結中移除class=\"external\"。"
+}
